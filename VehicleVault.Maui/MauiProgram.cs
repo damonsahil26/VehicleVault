@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+using VehicleVault.Maui.Services;
+using VehicleVault.Maui.ViewModels;
+using VehicleVault.Maui.Views;
 
 namespace VehicleVault.Maui
 {
@@ -14,6 +17,12 @@ namespace VehicleVault.Maui
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.AddSingleton<CarViewModel>();
+            builder.Services.AddSingleton<CarService>();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddTransient<CarDetailsViewModel>();
+            builder.Services.AddTransient<CarDetailsPage>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
