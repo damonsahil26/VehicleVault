@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace VehicleVault.Maui.Models
 {
-    public class CarMart : BaseEntity
+    public abstract class BaseEntity
     {
-        public List<Car> Cars { get; set; } = new List<Car>();
+        public int Id { get; set; }
     }
 }
